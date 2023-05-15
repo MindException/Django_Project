@@ -15,8 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+
+    # 3번 째 방법 polls 폴더에 urls파일을 사용한다는 뜻히다.
+    path('', include('polls.urls'))
+    # path('admin/', admin.site.urls),
 ]
